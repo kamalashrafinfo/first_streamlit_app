@@ -46,16 +46,9 @@ import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("SELECT * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
-#streamlit.text("Hello from Snowflake:")
-#streamlit.text(my_data_row)
-streamlit.header("Th fruit load list contains:")
-streamlit.dataframe(my_data_rows)
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_data_row = my_cur.fetchone()
+streamlit.text("Hello from Snowflake:")
+streamlit.text(my_data_row)
 
-fruit_choice = streamlit.text_input('What fruit would you like to addt?','jackfruit')
-streamlit.write('Thanks for adding', fruit_choice)
-Streamlit.write('Thanks for adding', add_my_frit)
-#This will not work correctly, but just go with it now
-#my_cur.execute("insert into fruit_load_list values ('from streamlit')
+
