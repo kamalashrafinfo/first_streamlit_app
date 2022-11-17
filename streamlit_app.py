@@ -55,15 +55,6 @@ streamlit.text("Th fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
 
-#my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])  --39
-#my_cur = my_cnx.cursor()
-#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-#my_cur.execute("SELECT * from fruit_load_list")
-#my_data_row = my_cur.fetchone()
-#streamlit.text("Hello from Snowflake:") --43
-#streamlit.text("Th fruit load list contains:")
-#streamlit.dataframe(my_data_row)
-
 streamlit.write('The user entered ', fruit_choice)
 
 fruit_choice = streamlit.text_input('What fruit would you like to addt?','fruit_choice')
