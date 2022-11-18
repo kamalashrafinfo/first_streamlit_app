@@ -64,7 +64,7 @@ if not fruit_choice:
 else:
 	back_from_function = get_fruityvice_data(fruit_choice)
 	streamlit.dataframe(back_from function)
-	streamlit.error()
+	#streamlit.error()
 	
 #streamlit.text(fruityvice_response.json()) --Instruction to delete this line.
 	
