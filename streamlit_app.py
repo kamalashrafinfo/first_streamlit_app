@@ -32,24 +32,38 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 	
 #New Section to display fruitvice api response
-streamlit.header("Fruityvice Fruit Advice!")
+#streamlit.header("Fruityvice Fruit Advice!")
 	
 #fruit_choice = streamlit.text_input('What fruit would you like information about?','kiwi')
-try:
-	fruit_choice = streamlit.text_input('What fruit would you like information about?')
-	if not fruit_choice:
-		streamlit.error("Please select a fruit to get information.")
-	else:
+#try:
+#	fruit_choice = streamlit.text_input('What fruit would you like information about?')
+#	if not fruit_choice:
+#		streamlit.error("Please select a fruit to get information.")
+#	else:
 	
 #streamlit.write('The user entered ', fruit_choice)
 	
 #import requests
 #fruityvice_response = requests.get(https://fruityvice.com/api/fruit/watermelon)
-		fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" +  fruit_choice)
-		fruitvice_normalized = pandas.json_normalize(fruitvice_response.json())
-		streamlit.dataframe(fruitvice_normalized)
+#		fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" +  fruit_choice)
+#		fruitvice_normalized = pandas.json_normalize(fruitvice_response.json())
+#		streamlit.dataframe(fruitvice_normalized)
 	
-except URLError as e:
+#except URLError as e:
+#create the repeatable code block (called a function)
+def get_fruitvice_data(this_fruit_choice);
+	fruitvice_response = requests.get("https://fruitvice.com/api/fruit/" + this_fruit_choice)
+	fruitvice_normalized = pandas.json_normalize(fruitvice_response.json())
+	return fruitvice_normalized
+#New Section to display fruitvice api response
+streamlit.header('Fruitvice Fruit Advice!')
+try:
+	Fruit_choice = streamlit.text_input('What fruit would you like information about?')
+if not fruit_choice:
+	Streamlit.error("Please select a fruit to get information.")
+else:
+	back_from_function - get_fruitvice_data(fruit_choice)
+	streamlit.dataframe(back_from function)
 	streamlit.error()
 	
 #streamlit.text(fruityvice_response.json()) --Instruction to delete this line.
