@@ -51,18 +51,18 @@ streamlit.dataframe(fruits_to_show)
 	
 #except URLError as e:
 #create the repeatable code block (called a function)
-def get_fruitvice_data(this_fruit_choice):
-	fruitvice_response = requests.get("https://fruitvice.com/api/fruit/" + this_fruit_choice)
-	fruitvice_normalized = pandas.json_normalize(fruitvice_response.json())
-	return fruitvice_normalized
+def get_fruityvice_data(this_fruit_choice):
+	fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+	fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+	return fruityvice_normalized
 #New Section to display fruitvice api response
-streamlit.header('Fruitvice Fruit Advice!')
+streamlit.header('Fruityvice Fruit Advice!')
 try:
 	Fruit_choice = streamlit.text_input('What fruit would you like information about?')
 if not fruit_choice:
 	Streamlit.error("Please select a fruit to get information.")
 else:
-	back_from_function = get_fruitvice_data(fruit_choice)
+	back_from_function = get_fruityvice_data(fruit_choice)
 	streamlit.dataframe(back_from function)
 	streamlit.error()
 	
